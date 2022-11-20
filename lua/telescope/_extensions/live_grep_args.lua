@@ -41,7 +41,7 @@ local live_grep_args = function(opts)
     local args = tbl_clone(opts.vimgrep_arguments)
     local prompt_parts = prompt_parser.parse(prompt, opts.auto_quoting)
 
-    local cmd = vim.tbl_flatten { args, prompt_parts }
+    local cmd = vim.tbl_flatten { args, prompt_parts, opts.search_dirs }
     return cmd
   end
 
